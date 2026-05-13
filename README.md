@@ -60,7 +60,9 @@ You are facing North <-- View Direction
 
 ========================================================================================
 
-This game was created by Luis Cruz or as I like to go online by, Regnbuebörk. You can check out my site at https://silly-goober.neocities.org
+This game was created by Luis Cruz or as I like to go online by, Regnbuebörk. This software was released to the public on May 13, 2026.
+  
+You can check out my site at https://silly-goober.neocities.org
 
 Enjoy!
 </pre>

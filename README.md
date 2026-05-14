@@ -15,8 +15,10 @@ Other than that, enjoy the game! More documentation and manual is available belo
 
 ========================================================================================
 
+  
                             --=={    CONTROLS    }==--
 
+  
 #NOTE: Commands are not case sensitive, however they must be written correctly.
 
 Movement: Type "Walk (N, E, S, W)" or just "(N, E, S, W)." (N, E, S, W refer to North, East, South, and West respectedly.)
@@ -29,7 +31,9 @@ More commands are planned to be implemented soon.
 
 ========================================================================================
 
+  
                             --=={    Maze Map    }==--
+   
 
 The map is currently very small with plans to implement (a possibly terrible) automatically generated map in the future. Right now the map is just a simple dungeon of around 16 total available steps to victory. Below is an ASCII representation of the Maze as shown overhead. This map is also shown at the start of the game.
 
@@ -43,7 +47,9 @@ The map is currently very small with plans to implement (a possibly terrible) au
 
 ========================================================================================
 
+  
                             --=={     VIEW     }==--
+  
 
 The dungeon is shown in ASCII characters with the view direction shown just below the view window.
 

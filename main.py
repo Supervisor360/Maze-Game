@@ -1,77 +1,65 @@
 #!/usr/bin/env python3
-import os
+from Ascii import *
 import time
+import subprocess
+import os
 def clear_screen():
- # 'nt' is for Windows, 'posix' is for Mac and Linux
- os.system('cls' if os.name == 'nt' else 'clear')
+    # 'nt' is for Windows, 'posix' is for Mac and Linux
+    command = 'cls' if os.name == 'nt' else 'clear'
+    subprocess.run(command, shell=True)
 
 #basic commands
+def quits():
+  while True:
+   answer = input("Are you sure you want to exit the game? (Y/N)").upper()
+   if answer == "N" or answer == "NO":
+    break
+   if answer == "Y" or answer == "YES":
+    print("You chickened out. BKAW!")
+    exit()
 bump = "You bumped into a wall"
-help = 'To walk, type: "Walk (N,E,S,W) or (N,E,S,W), for help type: "Help" or "H", To exit the game type: "Exit", Press [ENTER] to close this message.'
+helpme = 'To walk, type: "Walk (N,E,S,W) or (N,E,S,W), for help type: "Help" or "H", To exit the game type: "Exit" or "Quit", Press [ENTER] to close this message.'
 
+#Intro
 clear_screen()
 print("This game is the first one i have ever created, it is an ambitious attempt to show off what i have learned so far. Please, please, please note any critiques or any bugs/issues in the comments.")
 print("This game was made by Regnbuebork on PyCharm.")
 input("Press [ENTER] to start")
 clear_screen()
-print("#$######")
-print("# #    #")
-print("# # ## #")
-print("# #  # #")
-print("# ## # #")
-print("#    #@#")
-print("########")
+
+#Map
+print(Map1)
 print("@ = Player, # = Wall, $ = Exit")
-print("You entered the maze")
-input(help)
 input("Press [ENTER] to enter the maze")
+clear_screen()
+print("You are entering the maze!")
+time.sleep(3)
+clear_screen()
+
+#Game Start
 while True:
  clear_screen()
- print("\\           /")
- print(" \\         /")
- print("  \\       /")
- print("          ")
- print("          ")
- print("          ")
- print("  /       \\ ")
- print(" /         \\ ")
- print("/           \\ ")
+ print(Cor1)
  print("You are facing North")
  choice = input("You: ").upper()
  if choice == "HELP":
-  input(help)
+  input(helpme)
  if choice == "WALK N" or choice == "N":
   while True:
    clear_screen()
-   print("\\            /")
-   print(" |          /")
-   print(" |_________/")
-   print(" |           ")
-   print(" |           ")
-   print(" |_________  ")
-   print(" |         \\ ")
-   print(" |          \\ ")
-   print("/            \\ ")
+   print(Cor2)
    print("You are facing North")
    choice = input("You: ").upper()
    if choice == "HELP":
-    input(help)
+    input(helpme)
    if choice == "WALK N" or choice == "N":
     while True:
      clear_screen()
-     print("_            /")
-     print(" |\\         /")
-     print(" | \\       /")
-     print(" |           ")
-     print(" |           ")
-     print(" |            ")
-     print(" | /       \\ ")
-     print("_|/         \\ ")
-     print("             \\ ")
+     print(Cor3)
      print("You are facing West")
      choice = input("You: ").upper()
      if choice == "HELP":
-      input(help)
+      input(helpme)
      if choice == "WALK N" or choice == "N":
       print(bump)
       time.sleep(0.5)
@@ -86,15 +74,7 @@ while True:
      if choice == "WALK W" or choice == "W":
       while True:
        clear_screen()
-       print("\\            /")
-       print(" |          /")
-       print(" |_________/")
-       print(" |           ")
-       print(" |           ")
-       print(" |_________  ")
-       print(" |         \\ ")
-       print(" |          \\ ")
-       print("/            \\ ")
+       print(Cor2)
        print("You are facing West")
        choice = input("You: ").upper()
        if choice == "HELP":
@@ -114,54 +94,29 @@ while True:
        if choice == "WALK W" or choice == "W":
         while True:
          clear_screen()
-         print("              /")
-         print("_            /")
-         print(" |__________/")
-         print(" |           ")
-         print(" |           ")
-         print(" |            ")
-         print(" |__________ ")
-         print("_|          \\")
-         print("             \\")
+         print(Cor4)
          print("You are facing South")
          choice = input("You: ").upper()
          if choice == "HELP":
-          print(
-           help)
+          input(helpme)
          if choice == "WALK N" or choice == "N":
           print("You bumped into a wall!")
           continue
          if choice == "WALK S" or choice == "S":
           while True:
            clear_screen()
-           print("            /")
-           print(" |\\        /")
-           print(" | \\      /")
-           print(" |        ")
-           print(" |        ")
-           print(" |        ")
-           print(" | /      \\ ")
-           print(" |/        \\ ")
-           print("            \\ ")
+           print(Cor6)
            print("You are facing East")
            choice = input("You: ").upper()
            if choice == "HELP":
-            input(help)
+            input(helpme)
            if choice == "WALK N" or choice == "N":
             choice == ""
             break
            if choice == "WALK E" or choice == "E":
             while True:
              clear_screen()
-             print("\\            _ ")
-             print(" \\__________|")
-             print("            |")
-             print("            |")
-             print("            |")
-             print("            |")
-             print("  __________|")
-             print(" /          |_")
-             print("/            ")
+             print(Cor1)
              print("You are facing East")
              choice = input("You: ").upper()
              if choice == "HELP":
@@ -174,15 +129,7 @@ while True:
              if choice == "WALK E" or choice == "E":
               while True:
                clear_screen()
-               print("\\            _ ")
-               print(" \\__________|")
-               print("            |")
-               print("            |")
-               print("            |")
-               print("            |")
-               print("  __________|")
-               print(" /          |_")
-               print("/            ")
+               print(Cor8)
                print("You are facing South")
                choice = input("You: ").upper()
                if choice == "HELP":
@@ -199,19 +146,11 @@ while True:
                if choice == "WALK S" or choice == "S":
                 while True:
                  clear_screen()
-                 print("\\            _ ")
-                 print(" \\          |")
-                 print("  \\         |")
-                 print("            |")
-                 print("            |")
-                 print("            |")
-                 print("  /         |")
-                 print(" /          \\")
-                 print("/            \\_")
+                 print(Cor9)
                  print("You are facing West")
                  choice = input("You: ").upper()
                  if choice == "HELP":
-                  print(help)
+                  input(helpme)
                  if choice == "WALK N" or choice == "N":
                   choice = ""
                   break
@@ -226,15 +165,7 @@ while True:
                  if choice == "WALK W" or choice == "W":
                   while True:
                    clear_screen()
-                   print("\\           /")
-                   print(" \\         /")
-                   print("  \\       /")
-                   print("          ")
-                   print("          ")
-                   print("          ")
-                   print("  /       \\ ")
-                   print(" /         \\ ")
-                   print("/           \\ ")
+                   print(Cor1)
                    print("You are facing West")
                    choice = input("You: ").upper()
                    if choice == "HELP":
@@ -254,15 +185,7 @@ while True:
                    if choice == "WALK W" or choice == "W":
                     while True:
                      clear_screen()
-                     print("\\           /")
-                     print(" \\         /")
-                     print("  \\       /")
-                     print("          ")
-                     print("          ")
-                     print("          ")
-                     print("  /       \\ ")
-                     print(" /         \\ ")
-                     print("/           \\ ")
+                     print(Cor1)
                      print("You are facing West")
                      choice = input("You: ").upper()
                      if choice == "HELP":
@@ -282,19 +205,11 @@ while True:
                      if choice == "WALK W" or choice == "W":
                       while True:
                        clear_screen()
-                       print("\\            / ")
-                       print(" \\__________|")
-                       print("            |")
-                       print("            |")
-                       print("            |")
-                       print("            |")
-                       print("  __________|")
-                       print(" /          | ")
-                       print("/            \\")
+                       print(Cor10)
                        print("you are facing West")
                        choice = input("You: ").upper()
                        if choice == "HELP":
-                        input(help)
+                        input(helpme)
                        if choice == "WALK N" or choice == "N":
                         print(bump)
                         time.sleep(0.5)
@@ -309,15 +224,7 @@ while True:
                        if choice == "WALK W" or choice == "W":
                         while True:
                          clear_screen()
-                         print("\\            _ ")
-                         print(" \\         /|")
-                         print("  \\       / |")
-                         print("            |")
-                         print("            |")
-                         print("            |")
-                         print("  /       \\ |")
-                         print(" /         \\|_ ")
-                         print("/            ")
+                         print(Cor11)
                          print("You are facing North")
                          choice = input("You: ").upper()
                          if choice == "HELP":
@@ -326,15 +233,7 @@ while True:
                          if choice == "WALK N" or choice == "N":
                           while True:
                            clear_screen()
-                           print("\\           /")
-                           print(" \\         /")
-                           print("  \\       /")
-                           print("          ")
-                           print("          ")
-                           print("          ")
-                           print("  /       \\ ")
-                           print(" /         \\ ")
-                           print("/           \\ ")
+                           print(Cor1)
                            print("You are facing North")
                            choice = input("You: ").upper()
                            if choice == "HELP":
@@ -343,15 +242,7 @@ while True:
                            if choice == "WALK N" or choice == "N":
                             while True:
                              clear_screen()
-                             print("\\   [EXIT]  /")
-                             print(" \\ ________/ ")
-                             print("  |        |  ")
-                             print("  |  ####  |  ")
-                             print("  |  EXIT  |  ")
-                             print("  |  @==@  |  ")
-                             print("  |__####__|  ")
-                             print(" /          \\  ")
-                             print("/            \\")
+                             print(exit)
                              print("You are facing North")
                              choice = input("You: ").upper()
                              if choice == "HELP":
@@ -375,19 +266,13 @@ while True:
                               print(bump)
                               time.sleep(0.5)
                               continue
-                             if choice == "EXIT":
-                              while True:
-                               answer = input("Are you sure you want to exit the game? (Y/N)").upper()
-                               if answer == "N" or answer == "NO":
-                                break
-                               if answer == "Y" or answer == "YES":
-                                print("You chickened out. BKAW!")
-                                exit()
-                               if choice == "":
-                                continue
-                               else:
+                             if choice == "EXIT" or choice == "QUIT":
+                              quits()
+                             if choice == "":
                                 continue
                              else:
+                                continue
+                            else:
                               print("Command not found")
                               choice == ""
                            if choice == "WALK E" or choice == "E":
@@ -401,19 +286,13 @@ while True:
                             print(bump)
                             time.sleep(0.5)
                             continue
-                           if choice == "EXIT":
-                            while True:
-                             answer = input("Are you sure you want to exit the game? (Y/N)").upper()
-                             if answer == "N" or answer == "NO":
-                              break
-                             if answer == "Y" or answer == "YES":
-                              print("You chickened out. BKAW!")
-                              exit()
-                             if choice == "":
-                              continue
-                             else:
+                           if choice == "EXIT" or choice == "QUIT":
+                            quits()
+                           if choice == "":
                               continue
                            else:
+                              continue
+                          else:
                             print("Command not found")
                             choice == ""
                           continue
@@ -428,69 +307,45 @@ while True:
                           print(bump)
                           time.sleep(0.5)
                           continue
-                         if choice == "EXIT":
-                          while True:
-                           answer = input("Are you sure you want to exit the game? (Y/N)").upper()
-                           if answer == "N" or answer == "NO":
-                            break
-                           if answer == "Y" or answer == "YES":
-                            print("You chickened out. BKAW!")
-                            exit()
-                           if choice == "":
-                            continue
-                           else:
+                         if choice == "EXIT" or choice == "QUIT":
+                          quits()
+                         if choice == "":
                             continue
                          else:
+                            continue
+                        else:
                           print("Command not found")
                           choice == ""
                         continue
-                       if choice == "EXIT":
-                        while True:
-                         answer = input("Are you sure you want to exit the game? (Y/N)").upper()
-                         if answer == "N" or answer == "NO":
-                          break
-                         if answer == "Y" or answer == "YES":
-                          print("You chickened out. BKAW!")
-                          exit()
-                         if choice == "":
-                          continue
-                         else:
+                       if choice == "EXIT" or choice == "QUIT":
+                        quits()
+                       if choice == "":
                           continue
                        else:
+                          continue
+                      else:
                         print("Command not found")
                         choice == ""
                    else:
                     print("Command not found")
-                 if choice == "EXIT":
-                  while True:
-                   choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-                   if choice == "N" or choice == "NO":
-                    break
-                   if choice == "Y" or choice == "YES":
-                    print("You chickened out. BKAW!")
-                    exit()
-                   if choice == "":
-                    continue
-                   else:
+                 if choice == "EXIT" or choice == "QUIT":
+                  quits()
+                 if choice == "":
                     continue
                  else:
+                    continue
+                else:
                   print("Command not found")
                if choice == "WALK W" or choice == "W":
                 choice = ""
                 break
-               if choice == "EXIT":
-                while True:
-                 choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-                 if choice == "N" or choice == "NO":
-                  break
-                 if choice == "Y" or choice == "YES":
-                  print("You chickened out. BKAW!")
-                  exit()
-                 if choice == "":
-                  continue
-                 else:
+               if choice == "EXIT" or choice == "QUIT":
+                quits()
+               if choice == "":
                   continue
                else:
+                  continue
+              else:
                 print("Command not found")
              if choice == "WALK S" or choice == "S":
               print(bump)
@@ -499,19 +354,13 @@ while True:
              if choice == "WALK W" or choice == "W":
               choice = ""
               break
-             if choice == "EXIT":
-              while True:
-               choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-               if choice == "N" or choice == "NO":
-                break
-               if choice == "Y" or choice == "YES":
-                print("You chickened out. BKAW!")
-                exit()
-               if choice == "":
-                continue
-               else:
+             if choice == "EXIT" or choice == "QUIT":
+              quits()
+             if choice == "":
                 continue
              else:
+                continue
+            else:
               print("Command not found")
            if choice == "WALK S" or choice == "S":
             print(bump)
@@ -521,55 +370,37 @@ while True:
             print(bump)
             time.sleep(0.5)
             continue
-           if choice == "EXIT":
-            while True:
-             choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-             if choice == "N" or choice == "NO":
-              break
-             if choice == "Y" or choice == "YES":
-              print("You chickened out. BKAW!")
-              exit()
-             if choice == "":
-              continue
-             else:
+           if choice == "EXIT" or choice == "QUIT":
+            quits()
+           if choice == "":
               continue
            else:
+              continue
+          else:
             print("Command not found")
          if choice == "WALK W" or choice == "W":
           print(bump)
           time.sleep(0.5)
           continue
-         if choice == "EXIT":
-          while True:
-           choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-           if choice == "N" or choice == "NO":
-            break
-           if choice == "Y" or choice == "YES":
-            print("You chickened out. BKAW!")
-            exit()
-           if choice == "":
-            continue
-           else:
+         if choice == "EXIT" or choice == "QUIT":
+          quits()
+         if choice == "":
             continue
          else:
+            continue
+        else:
           print("Command not found")
           continue
-       if choice == "EXIT":
-        while True:
-         choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-         if choice == "N" or choice == "NO":
-          break
-         if choice == "Y" or choice == "YES":
-          print("You chickened out. BKAW!")
-          exit()
-         if choice == "":
-          continue
-         else:
+       if choice == "EXIT" or choice == "QUIT":
+        quits()
+       if choice == "":
           continue
        else:
+          continue
+      else:
         print("Command not found")
       continue
-     if choice == "EXIT":
+     if choice == "EXIT" or choice == "QUIT":
       while True:
        choice = input("Are you sure you want to exit the game? (Y/N)").upper()
        if choice == "N" or choice == "NO":
@@ -596,19 +427,13 @@ while True:
     print(bump)
     time.sleep(0.5)
     continue
-   if choice == "EXIT":
-    while True:
-     choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-     if choice == "N" or choice == "NO":
-      break
-     if choice == "Y" or choice == "YES":
-      print("You chickened out. BKAW!")
-      exit()
-     if choice == "":
-      continue
-     else:
+   if choice == "EXIT" or choice == "QUIT":
+    quits()
+   if choice == "":
       continue
    else:
+      continue
+  else:
     print("Command not found")
     continue
   continue
@@ -624,18 +449,8 @@ while True:
   print(bump)
   time.sleep(0.5)
   continue
- if choice == "EXIT":
-  while True:
-   choice = input("Are you sure you want to exit the game? (Y/N)").upper()
-   if choice == "N" or choice == "NO":
-    break
-   if choice == "Y" or choice == "YES":
-    print("You chickened out. BKAW!")
-    exit()
-   else:
-    continue
-   if choice == "":
-    continue
+ if choice == "EXIT" or choice == "QUIT":
+  quits()
  else:
   print("Command not found")
   continue

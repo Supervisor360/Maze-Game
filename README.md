@@ -16,9 +16,8 @@ This was released as is in order to get ideas and constructive critique from cod
 on how to Improve, Clean, and Repair my code, as well as what I could do, add, 
 and how to add such features.
 
-The Source Code is literally in a single file called "source.py". The actual executables
-are as of currently available as a Unix Executable File with a Windows port being
-released once I either setup a virtual machine or get home on my Windows PC.
+The actual executables are as of currently available as a Unix Executable File with a 
+Windows port being released once I either setup a virtual machine or get home on my Windows PC.
 
 The game is fully Open Source and I insist that you modify the code to your hearts
 content to help give me a visual example to work and learn off of. It will highly 
@@ -40,7 +39,7 @@ North, East, South, and West respectedly.)
 
 Help: Type "Help" for a list of available commands and their arguments.
 
-Exit: Type "Exit" to leave the game. You will be prompted whether or not you want to 
+Exit: Type "Exit" or "QUIT" to leave the game. You will be prompted whether or not you want to 
 leave. Y = Leave, N = Stay.
 
 More commands are planned to be implemented soon.
